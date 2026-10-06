@@ -7,4 +7,5 @@ RUN mkdir -p themes/hugo-hero-theme && \
 RUN hugo --minify
 
 FROM nginx:alpine
+# Ensure this points precisely to the generated public folder
 COPY --from=builder /src/exampleSite/public /usr/share/nginx/html
