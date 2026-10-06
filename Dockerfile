@@ -1,4 +1,4 @@
-FROM klakegg/hugo:alpine AS builder
+FROM klakegg/hugo:ext-alpine AS builder
 WORKDIR /src
 COPY . .
 WORKDIR /src/exampleSite
