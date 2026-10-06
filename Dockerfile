@@ -1,9 +1,7 @@
 FROM klakegg/hugo:alpine AS builder
 WORKDIR /src
 COPY . .
-
-# Run Hugo pointing to the exampleSite directory
-RUN hugo --source=/src/exampleSite --minify
+RUN hugo --minify
 
 FROM nginx:alpine
-COPY --from=builder /src/exampleSite/public /usr/share/nginx/html
+COPY --from=builder /src/public /usr/share/nginx/html
