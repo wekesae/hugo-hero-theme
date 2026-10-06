@@ -1,4 +1,4 @@
-FROM ghcr.io/hugomods/hugo:ext-alpine AS builder
+FROM ghcr.io/gohugoio/hugo:ext-0.125.6 AS builder
 WORKDIR /src
 COPY . .
 WORKDIR /src/exampleSite
